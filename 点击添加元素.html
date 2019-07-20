@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	
+	<style type="text/css">
+		div{
+			float: left;
+		}
+		#dv{
+			width: 100px;
+			height: 100px;
+		}
+		#dv1{
+			position: absolute;
+			left: 500px;
+			top: 200px;
+		}
+		#dv2{
+			
+		}
+		#se1{
+			width: 60px;
+			height: 100px;
+		}
+
+	</style>
+	<script src="scripts/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$("#btn").click(function(event) {
+				/* Act on the event */
+				$("<p>hello world!</p>").appendTo('#dv');
+
+			});
+
+			$("#toRight").click(function(event) {
+				/* Act on the event */
+				$("#se1>option:selected").appendTo('#se2');
+			});
+
+			$("#toLeft").click(function(event) {
+				/* Act on the event */
+				$("#se2>option:selected").appendTo('#se1');
+			});
+
+			$("#toAllRight").click(function(event) {
+				/* Act on the event */
+				$("#se1>option").appendTo('#se2');
+			});
+			// 获取左边的下拉框加入到右边
+			$("#toAllLeft").click(function(event) {
+				/* Act on the event */
+				$("#se2>option").appendTo('#se1');
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<button id="btn">显示效果</button>
+
+	<div id="dv">
+	</div>
+	
+  <div id="dv1">
+
+		<select name="" id="se1" multiple="multiple" style="float:left;width:80px;height:100px">
+			<option value="">打印</option>
+			<option value="">删除</option>
+			<option value="">修改</option>
+			<option value="">查询</option>
+			<option value="">添加</option>
+		</select>
+
+	<div style="float:left;width:50px;height:100px">
+		<input type="button" value=">" style="width:50px" id="toRight"/>
+		<input type="button" value="<" style="width:50px" id="toLeft"/>
+		<input type="button" value=">>" style="width:50px" id="toAllRight"/>
+		<input type="button" value="<<" style="width:50px" id="toAllLeft"/>
+	</div>
+
+	<select name="" id="se2" multiple="multiple" style="float:left;width:80px;height:100px"></select>
+
+  </div>
+</body>
+</html>

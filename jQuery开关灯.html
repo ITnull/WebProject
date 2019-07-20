@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="scripts/jquery-3.4.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#btn").click(function(){
+				if($("#btn").val()=="开灯"){
+					// alert($("#btn").val());
+					// 开灯操作，将按钮值设置为“关灯”
+					$("body").css("backgroundColor","red");
+					$("#btn").val("关灯");
+					// alert($("#btn").val());
+				}else{
+					// 关灯操作，将按钮值设置为“开灯”
+					$("body").css("backgroundColor","black");
+					$("#btn").val("开灯");
+				}
+				
+			});
+		});				
+	</script>
+</head>
+<body>
+	<input id="btn" type="button" value="开灯" />
+</body>
+</html>

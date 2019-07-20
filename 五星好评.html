@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		li{
+			list-style: none;
+			float:left;
+			font-size: 40px;
+			color: yellow;
+		}
+	</style>
+	<script src="scripts/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// 这里的li标签要针对所有来出来
+			$("li").mouseenter(function(event) {
+				/* Act on the event */
+				$(this).text("★").prevAll("li").text("★");
+			}).mouseleave(function(event) {
+				/* Act on the event */
+				$("li").text("☆");
+				$(".comment>li[index=1]").text('★').prevAll("li").text('★');
+			}).click(function(event) {
+				/* Act on the event */
+				$(this).attr({
+					"index": '1'
+				}).siblings('li').removeAttr('index');
+			});;
+		});  
+	</script>
+</head>
+<body>
+	<ul class="comment">
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+	</ul>
+</body>
+</html>

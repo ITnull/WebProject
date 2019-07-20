@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="scripts/jquery-3.4.1.js"></script>
+	<style type="text/css">
+
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			// 点击按钮隔行变色
+			$("#btn").click(function(event) {
+				/* Act on the event */
+				$("p:odd").css("backgroundColor","red");
+			});
+
+			// 选中的标签变色
+			$("p").mouseover(function(event) {
+				/* Act on the event */
+				var index = $("p").index(this);
+				$("p").eq(index).css("backgroundColor","red");
+				
+				// 以下这种为啥实现不成功
+				// $("p:eq("+index+")").css("backgroundColor","green");
+			});
+
+			// 离开标签
+			$("p").mouseout(function(event) {
+				/* Act on the event */
+				var index = $("p").index(this);
+				$("p").eq(index).css("backgroundColor","white");
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id="btn">隔行变色</button>
+	<p>乔峰:降龙十八掌</p>
+	<p>张无忌:乾坤大挪移</p>
+	<p>段誉:鳞波微步</p>
+	<p>丁棚:天外流星贱</p>
+	<p>张三丰:太极掌</p>
+	<p>段飞:极乐神功</p>
+	<p>云飞扬:天馋功</p>
+	<p>杨过:黯然销魂掌</p>
+	<p>那谁谁:如来神掌</p>
+	<p>孟星魂:流星蝴蝶剑</p>
+	<p>楠哥:少女萌萌拳</p>
+</body>
+</html>

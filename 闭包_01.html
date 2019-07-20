@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// function add(){
+		// 	var counter=0;
+		// 	function count(){
+		// 		console.log(counter+=1);
+		// 	}
+		// 	return count;
+		// }
+		// var i=add();
+
+		// i();
+		// i();
+		// i();
+
+		// 即时调用函数表达式 IIFE
+		// (function add(a,b){
+		// 	console.log(a+b);
+		// })(1,2);
+
+		// 结合数组观察闭包
+		var arr = [];
+		for(var i=0;i<10;i++){
+			(function(a){
+				arr[a]=function(){
+					console.log(a);
+				}
+			})(i);
+		}
+
+		console.log(arr[2]());
+	</script>
+</body>
+</html>

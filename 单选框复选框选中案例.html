@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="scripts/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			// $("#checkAll").prop({checked: true});
+			$("#checkAll").click(function(event) {
+				/* Act on the event */
+				$("#dv1>input").prop("checked", $("#checkAll").prop("checked"))
+			});
+
+		});
+
+	</script>
+</head>
+<body>
+	<input type="checkbox" id="checkAll"/>全选</br>
+	<div id="dv1">
+		<input type="checkbox" id="basketball"/>篮球
+		<input type="checkbox" id="football"/>足球
+		<input type="checkbox" id="netball"/>网球
+	</div>
+</body>
+</html>
